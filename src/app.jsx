@@ -40,6 +40,7 @@ export default class App extends React.Component {
 
     return (
       <div>
+        
         <form onSubmit={this.handleSubmit} className={this.state.showInput ? '' : 'hidden'}>
           <label>
             Change <strong>{this.state.location.toUpperCase()}</strong> Value
@@ -48,21 +49,10 @@ export default class App extends React.Component {
           <input type="submit" value="Submit" />
         </form>
 
-        <div className="row">
-          <h1 onClick={() => changeLocation('a')}>A =</h1>
-          <h1>{store.get('a')}</h1>
-        </div>
-        
-        <div className="row">
-          <h1 onClick={() => changeLocation('b')}>B =</h1>
-          <h1>{store.get('b')}</h1>
-        </div>
-
-        <div className="row">
-          <h1 onClick={() => changeLocation('c')}>C =</h1>
-          <h1>{store.get('c')}</h1>
-        </div>
-        
+        <h1 onClick={() => changeLocation('a')}>A = {store.get('a')}</h1>
+        <h1 onClick={() => changeLocation('b')}>B = {store.get('b')}</h1>
+        <h1 onClick={() => changeLocation('c')}>C = {store.get('c')}</h1>
+      
       </div>
       
     );
