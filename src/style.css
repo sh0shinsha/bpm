@@ -1,0 +1,17 @@
+body {
+    background-color: lightblue;
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    padding: 50px;
+    color: white;
+}
+
+.row {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
