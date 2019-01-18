@@ -12,6 +12,7 @@ export default class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.changeLocation = this.changeLocation.bind(this);
   }
   
   handleChange(event) {
@@ -29,14 +30,16 @@ export default class App extends React.Component {
     render();
   }
 
+  changeLocation(location) {
+    this.setState({
+      location: location,
+      showInput: true
+    });
+  };
+
   render() {
 
-    const changeLocation = (location) => {
-      this.setState({
-        location: location,
-        showInput: true
-      });
-    };
+    
 
     return (
       <div>
@@ -49,9 +52,10 @@ export default class App extends React.Component {
           <input type="submit" value="Submit" />
         </form>
 
-        <h1 onClick={() => changeLocation('a')}>A = {store.get('a')}</h1>
-        <h1 onClick={() => changeLocation('b')}>B = {store.get('b')}</h1>
-        <h1 onClick={() => changeLocation('c')}>C = {store.get('c')}</h1>
+        {/* https://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method */}
+        <h1 onClick={() => this.changeLocation('a')}>A = {store.get('a')}</h1>
+        <h1 onClick={() => this.changeLocation('b')}>B = {store.get('b')}</h1>
+        <h1 onClick={() => this.changeLocation('c')}>C = {store.get('c')}</h1>
       
       </div>
       
