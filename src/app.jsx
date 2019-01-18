@@ -39,8 +39,6 @@ export default class App extends React.Component {
 
   render() {
 
-    
-
     return (
       <div>
         
@@ -52,7 +50,6 @@ export default class App extends React.Component {
           <input type="submit" value="Submit" />
         </form>
 
-        {/* https://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method */}
         <h1 onClick={() => this.changeLocation('a')}>A = {store.get('a')}</h1>
         <h1 onClick={() => this.changeLocation('b')}>B = {store.get('b')}</h1>
         <h1 onClick={() => this.changeLocation('c')}>C = {store.get('c')}</h1>
