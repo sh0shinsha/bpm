@@ -1,5 +1,5 @@
 import React from 'react';
-import {store} from './localStore.js';
+import {setStore, getStore} from './localStore.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class App extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    store.set(this.state.location, this.state.value);
+    setStore(this.state.location, this.state.value);
     this.setState({
       value: '',
       location: '',
@@ -50,9 +50,9 @@ export default class App extends React.Component {
           <input type="submit" value="Submit" />
         </form>
 
-        <h1 onClick={() => this.changeLocation('a')}>A = {store.get('a')}</h1>
-        <h1 onClick={() => this.changeLocation('b')}>B = {store.get('b')}</h1>
-        <h1 onClick={() => this.changeLocation('c')}>C = {store.get('c')}</h1>
+        <h1 onClick={() => this.changeLocation('a')}>A = {getStore('a')}</h1>
+        <h1 onClick={() => this.changeLocation('b')}>B = {getStore('b')}</h1>
+        <h1 onClick={() => this.changeLocation('c')}>C = {getStore('c')}</h1>
       
       </div>
       
